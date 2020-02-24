@@ -1,0 +1,229 @@
+﻿@using System.Globalization
+@model FinLibrary.Repo.EF.CompanyInfo
+
+@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Modern Pricing Packages Responsive Widget Template :: W3layouts</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+          content="Modern Pricing Packages Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&display=swap" rel="stylesheet">
+    <!-- //google fonts -->
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="~/Content/card/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+    <!--/fontAwesome-CSS -->
+    <link rel="stylesheet" href="~/Content/card/css/fontAwesome.css" type="text/css" media="all" />
+    <!--/fontAwesome-CSS -->
+</head>
+
+<body>
+    <!-- pricing plans -->
+    <section class="w3l-pricing-7-main" id="bottom">
+        <div class="pricing-7-sec">
+            <div class="wrapper pricing-grid">
+                <h3 class="heading">Modern Pricing Packages</h3>
+                <div class="pricing-sec-7">
+                    <!-- pricing grid 1 -->
+                    <div class="pricing-gd-left pric-7-1">
+                        <div class="w3l-pricing-7">
+                            <div class="w3l-pricing-7-top">
+                                <h6 class="one-light">Startup</h6>
+                                <p class="para">Perfect for small business</p>
+                                <h4><label>$</label>29<span>/project</span></h4>
+                            </div>
+                            <div class="w3l-pricing-7-bottom">
+                                <div class="w3l-pricing-7-bottom-bottom">
+                                    <ul class="links">
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">2 GB RAM Space</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">No Tech Support</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">10 GB SSD Cloud Storage</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">No Monthly Backups</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">10 Email Addresses</p>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="buy-button">
+                                    @*<a class="popup btn button-eff" href="#buy">Buy Now</a>*@
+                                    @Html.ActionLink("Subscribe", "Website", new { id = Model.Id }, new { @class = "popup btn button-eff" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //pricing grid 1 -->
+                    <!-- pricing grid 2 -->
+                    <div class="pricing-gd-left pric-7 active">
+                        <div class="w3l-pricing-7">
+                            <div class="w3l-pricing-7-top">
+                                <h5>Most Popular</h5>
+                                <h6>Enterprise</h6>
+                                <p class="para">Perfect for small business</p>
+                                <h4><label>$</label>35<span>/month</span></h4>
+                            </div>
+                            <div class="w3l-pricing-7-bottom">
+                                <div class="w3l-pricing-7-bottom-bottom">
+                                    <ul class="links">
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">4 GB RAM Space</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">24/7 Tech Support</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">20 GB SSD Cloud Storage</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">Monthly Backups</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">20 Email Addresses</p>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="buy-button">
+                                    @Html.ActionLink("Subscribe", "Website", new { id = Model.Id }, new { @class = "popup btn button-eff" })
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //pricing grid 2 -->
+                    <!-- pricing grid 3 -->
+                    <div class="pricing-gd-left pric-7-2">
+                        <div class="w3l-pricing-7">
+                            <div class="w3l-pricing-7-top">
+                                <h6 class="one-light">Developer</h6>
+                                <p class="para">Perfect for small business</p>
+                                <h4><label>$</label>44<span>/month</span></h4>
+                            </div>
+                            <div class="w3l-pricing-7-bottom">
+                                <div class="w3l-pricing-7-bottom-bottom">
+                                    <ul class="links">
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">6 GB RAM Space</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">24/7 Tech Support</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">40 GB SSD Cloud Storage</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">Monthly Backups</p>
+
+                                        </li>
+                                        <li>
+                                            <div class="tick-mark">
+                                                <span class="fa fa-check" aria-hidden="true"></span>
+                                            </div>
+                                            <p class="tick-info">30 Email Addresses</p>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="buy-button">
+                                    @Html.ActionLink("Subscribe", "Website", new { id = Model.Id }, new { @class = "popup btn button-eff" })
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- pricing grid 3 -->
+                </div>
+                <!-- copyright -->
+                <div class="copy-right text-center">
+                    <p>
+                        © 2020 Modern Pricing Packages. All rights reserved | Design by <a href="http://w3layouts.com/"
+                                                                                           target="_blank">W3layouts</a>
+                    </p>
+                </div>
+                <!-- //copyright -->
+            </div>
+        </div>
+    </section>
+    <!-- //pricing plans -->
+</body>
+
+</html>
+

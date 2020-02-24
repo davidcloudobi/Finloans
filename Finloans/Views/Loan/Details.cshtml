@@ -1,0 +1,246 @@
+﻿@*@model FinLibrary.Repo.EF.CompanyInfo
+
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <h2>Details</h2>
+
+    <div>
+        <h4>CompanyInfo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Rate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Rate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MinimumAmount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MinimumAmount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaximumAmount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaximumAmount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MinimumDuration)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MinimumDuration)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaximumDuration)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaximumDuration)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TypeOfLoan)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TypeOfLoan)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.WebAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WebAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.VisitCounter)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VisitCounter)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UniqueVisit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UniqueVisit)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+
+
+@*@{
+        ViewBag.Title = "Details";
+    }
+
+    <h2>Details</h2>*@
+
+
+@using System.Globalization
+@model FinLibrary.Repo.EF.CompanyInfo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@{
+    var time = (int)ViewBag.time;
+    var totalAmount = (decimal)ViewBag.amount;
+    var date = DateTime.Now.ToString("MMMM", CultureInfo.InvariantCulture);
+    var averageAmount = Convert.ToDecimal(ViewBag.breakdown);
+}
+
+<h2>  Loan breakdown details from @Html.DisplayFor(model => model.Name)</h2>
+
+<div>
+    <hr />
+
+    <dl class="dl-horizontal">
+
+
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>*@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.LoanType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoanType)
+            </dd>*@
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Details)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Details)
+            </dd>*@
+
+
+
+    </dl>
+</div>
+<br />
+<br />
+
+@*<p>
+
+        @ViewBag.breakdown
+
+    </p>*@
+<p>
+
+    @*<a href="http://@ViewBag.res" class="btn btn-success"> Click To Apply</a>*@
+    
+    @Html.ActionLink("Loan","Website", new {id = Model.Id})
+
+</p>
+
+
+
+<div>
+
+
+    <div class="mt-5 container ">
+
+        @*<dl class="dl-horizontal ">
+                <dt>
+                    @Html.DisplayNameFor(model => model.WebsiteName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.WebsiteName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.amountToBeBorrrowed)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.amountToBeBorrrowed)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Rate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Rate)
+                </dd>
+                <dt class="text-center">
+                    @Html.DisplayNameFor(model => model.Calculatedloan)
+                </dt>
+            </dl>*@
+        <table class="table table-hover table-dark ">
+            <thead>
+                <tr>
+                    <td>Month</td>
+                    <td>Interest</td>
+                    <td>Remaining Balance</td>
+                    <td>Number of Months</td>
+                </tr>
+
+            </thead>
+            <tbody>
+                @for (int i = 0; i < time; i++)
+                {
+                    var dropTotalAmount = totalAmount - (averageAmount * (i +1));
+                <tr>
+                    <td>@DateTime.Now.AddMonths(i).ToString("MMMM", CultureInfo.InvariantCulture)</td>
+                    <td> @ViewBag.breakdown.ToString("c2", CultureInfo.CreateSpecificCulture("ng-NG"))</td>
+                    <td> @dropTotalAmount</td>
+                    <td> @(i+1)</td>
+
+                </tr>
+
+                }
+
+            </tbody>
+
+
+        </table>
+        @*<div class="btn btn-warning">
+                @Html.ActionLink("book loan", "Redirect", new { id = Model.id })
+
+            </div>*@
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<FinLibrary.Repo.EF.CompanyInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinimumAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaximumAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinimumDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaximumDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeOfLoan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitCounter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UniqueVisit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinimumAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaximumAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinimumDuration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaximumDuration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeOfLoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitCounter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UniqueVisit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
