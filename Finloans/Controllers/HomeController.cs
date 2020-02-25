@@ -66,36 +66,15 @@ namespace Finloans.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Contact(int id)
+        public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
 
-            var paystackTransactionAPI = new PaystackTransaction("sk_test_4f260b0736ab1d07afe4642756c7868359abb180");
-            var response = await paystackTransactionAPI.InitializeTransaction("davidcloudobi@gmail.com", 500000);
-            if (response.status)
-            {
-                Response.AddHeader("Access-Control-Allow-Origin", "*");
-                Response.AppendHeader("Access-Control-Allow-Origin", "*");
-                Response.Redirect(response.data.authorization_url);
-            }
-            else
-            {
-                //Handle Error
-            }
-
-            return View(response);
+            return View();
         }
 
-        [HttpPost]
-
-        public async Task<ActionResult> Contact()
-        {
-            var paystackTransactionAPI = new PaystackTransaction("sk_test_4f260b0736ab1d07afe4642756c7868359abb180");
-            var response = await paystackTransactionAPI.VerifyTransaction("cipyd2ikxw");
-
-            return RedirectToAction("About");
-        }
+       
 
         [HttpGet]
         public ActionResult Apply()
@@ -132,6 +111,12 @@ namespace Finloans.Controllers
         public ActionResult SingleBlog()
         {
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult Sub()
+        {
+           return RedirectToAction("Subscribe", "Loan");
         }
     }
 }

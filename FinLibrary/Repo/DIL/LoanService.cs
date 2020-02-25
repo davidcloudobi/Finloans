@@ -10,10 +10,12 @@ namespace FinLibrary.Model.Services
     public class LoanService : ILoanService
     {
         private readonly Finloans _db;
+        private readonly Subscription sub;
 
-        public LoanService(Finloans db)
+        public LoanService(Finloans db, Subscription sub)
         {
             _db = db;
+            this.sub = sub;
         }
 
 

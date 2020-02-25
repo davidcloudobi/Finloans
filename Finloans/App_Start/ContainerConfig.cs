@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
 using FinLibrary.Model.Services;
+using FinLibrary.Repo.DIL;
 using FinLibrary.Repo.EF;
 //using FinLibrary.Repo.EF;
 using Microsoft.AspNet.Identity;
@@ -24,13 +25,16 @@ namespace Finloans.App_Start
             builder.RegisterType<CompanyService>()
                 .As<ICompanyService>()
                 .InstancePerRequest();
+            builder.RegisterType<SubService>()
+                .As<ISubService>()
+                .InstancePerRequest();
             builder.RegisterType<LoanService>()
                 .As<ILoanService>()
                 .InstancePerRequest();
             builder.RegisterType<VisitInfo>()
                 .InstancePerRequest();
             builder.RegisterType<FinLibrary.Repo.EF.Finloans>().InstancePerRequest();
-            //builder.RegisterType<myDatabase>().InstancePerRequest();
+            builder.RegisterType<Subscription>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
