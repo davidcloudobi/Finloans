@@ -11,5 +11,6 @@ namespace FinLibrary.Model.Services
         CompanyInfo Get(int id);
         decimal LoanBreakDown(decimal amount, double time, int id, string email);
         bool Unique(int id, string email);
+        int Amount(int id);
     }
 }

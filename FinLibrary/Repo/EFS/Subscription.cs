@@ -17,5 +17,7 @@ namespace FinLibrary.Repo.EF
         public DateTime End { get; set; }
 
         public int Package { get; set; }
+
+        public string Email { get; set; }
     }
 }

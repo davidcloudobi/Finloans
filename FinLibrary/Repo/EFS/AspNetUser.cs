@@ -1,5 +1,4 @@
 namespace FinLibrary.Repo.EF
-
 {
     using System;
     using System.Collections.Generic;

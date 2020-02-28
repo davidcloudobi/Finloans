@@ -1,5 +1,4 @@
-﻿@using System.Globalization
-@model FinLibrary.Repo.EF.CompanyInfo
+﻿
 
 @{
     Layout = null;
@@ -38,13 +37,15 @@ Author URL: http://w3layouts.com
             <div class="wrapper pricing-grid">
                 <h3 class="heading">Modern Pricing Packages</h3>
                 <div class="pricing-sec-7">
+                    
+
                     <!-- pricing grid 1 -->
                     <div class="pricing-gd-left pric-7-1">
                         <div class="w3l-pricing-7">
                             <div class="w3l-pricing-7-top">
                                 <h6 class="one-light">Startup</h6>
                                 <p class="para">Perfect for small business</p>
-                                <h4><label>$</label>29<span>/project</span></h4>
+                                <h4><label>#</label>5000<span>/month</span></h4>
                             </div>
                             <div class="w3l-pricing-7-bottom">
                                 <div class="w3l-pricing-7-bottom-bottom">
@@ -89,7 +90,7 @@ Author URL: http://w3layouts.com
                                 </div>
                                 <div class="buy-button">
                                     @*<a class="popup btn button-eff" href="#buy">Buy Now</a>*@
-                                    @Html.ActionLink("Subscribe", "Website", new { id = Model.Id }, new { @class = "popup btn button-eff" })
+                                    @Html.ActionLink("Subscribe", "Payment", new {id = 1}, new {@class = "popup btn button-eff"})
                                 </div>
                             </div>
                         </div>
@@ -102,7 +103,7 @@ Author URL: http://w3layouts.com
                                 <h5>Most Popular</h5>
                                 <h6>Enterprise</h6>
                                 <p class="para">Perfect for small business</p>
-                                <h4><label>$</label>35<span>/month</span></h4>
+                                <h4><label>#</label>20,000<span>/Year</span></h4>
                             </div>
                             <div class="w3l-pricing-7-bottom">
                                 <div class="w3l-pricing-7-bottom-bottom">
@@ -146,7 +147,7 @@ Author URL: http://w3layouts.com
                                     </ul>
                                 </div>
                                 <div class="buy-button">
-                                    @Html.ActionLink("Subscribe", "Website", new { id = Model.Id }, new { @class = "popup btn button-eff" })
+                                    @Html.ActionLink("Subscribe", "Payment", new {id = 2}, new {@class = "popup btn button-eff"})
 
                                 </div>
                             </div>
@@ -159,7 +160,7 @@ Author URL: http://w3layouts.com
                             <div class="w3l-pricing-7-top">
                                 <h6 class="one-light">Developer</h6>
                                 <p class="para">Perfect for small business</p>
-                                <h4><label>$</label>44<span>/month</span></h4>
+                                <h4><label>#</label>10,000<span>/6months</span></h4>
                             </div>
                             <div class="w3l-pricing-7-bottom">
                                 <div class="w3l-pricing-7-bottom-bottom">
@@ -203,7 +204,7 @@ Author URL: http://w3layouts.com
                                     </ul>
                                 </div>
                                 <div class="buy-button">
-                                    @Html.ActionLink("Subscribe", "Website", new { id = Model.Id }, new { @class = "popup btn button-eff" })
+                                    @Html.ActionLink("Subscribe", "Payment", new {id = 3}, new {@class = "popup btn button-eff"})
 
                                 </div>
                             </div>

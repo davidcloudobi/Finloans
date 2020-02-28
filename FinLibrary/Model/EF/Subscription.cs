@@ -13,5 +13,6 @@ namespace FinLibrary.Model.EF
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
         public int Package { get; set; }
+        public string Email { get; set; }
     }
 }

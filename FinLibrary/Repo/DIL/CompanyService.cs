@@ -131,5 +131,26 @@ namespace FinLibrary.Model.Services
             }
 
         }
+
+
+        public int Amount(int id)
+        {
+            var num = 0;
+            if (id ==1)
+            {
+                num = 5000 * 100;
+            }
+            if (id == 2)
+            {
+                num = 20000 *100;
+            }
+            if (id == 3)
+            {
+               num = 10000 * 100;
+            }
+
+            return num;
+
+        }
     }
 }

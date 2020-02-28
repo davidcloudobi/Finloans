@@ -56,6 +56,9 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Paystack.Net.SDK.1.3.7\lib\net46\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.8\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="Paystack.Net.Contstants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Paystack.Net.SDK.1.3.7\lib\net46\Paystack.Net.Contstants.dll</HintPath>
     </Reference>
@@ -71,7 +74,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
@@ -84,9 +89,11 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -137,6 +144,10 @@
     <Compile Include="Migrations\202002241545510_sub.designer.cs">
       <DependentUpon>202002241545510_sub.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002241905290_updateSub.cs" />
+    <Compile Include="Migrations\202002241905290_updateSub.designer.cs">
+      <DependentUpon>202002241905290_updateSub.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\EF\Subscription.cs" />
     <Compile Include="Model\EF\VisitInfo.cs" />
@@ -151,20 +162,28 @@
     <Compile Include="Repo\DIL\CompanyService.cs" />
     <Compile Include="Repo\DIL\ICompanyService.cs" />
     <Compile Include="Repo\DIL\ILoanService.cs" />
+    <Compile Include="Repo\DIL\ISubService.cs" />
     <Compile Include="Repo\DIL\LoanService.cs" />
-    <Compile Include="Repo\EF\AspNetRole.cs" />
-    <Compile Include="Repo\EF\AspNetUser.cs" />
-    <Compile Include="Repo\EF\AspNetUserClaim.cs" />
-    <Compile Include="Repo\EF\AspNetUserLogin.cs" />
-    <Compile Include="Repo\EF\CompanyInfo.cs" />
-    <Compile Include="Repo\EF\C__MigrationHistory.cs" />
-    <Compile Include="Repo\EF\Finloans.cs" />
-    <Compile Include="Repo\EF\LoanInfo.cs" />
-    <Compile Include="Repo\EF\Subscription.cs" />
-    <Compile Include="Repo\EF\VisitInfo.cs" />
+    <Compile Include="Repo\DIL\SubService.cs" />
+    <Compile Include="Repo\EFS\AspNetRole.cs" />
+    <Compile Include="Repo\EFS\AspNetUser.cs" />
+    <Compile Include="Repo\EFS\AspNetUserClaim.cs" />
+    <Compile Include="Repo\EFS\AspNetUserLogin.cs" />
+    <Compile Include="Repo\EFS\CompanyInfo.cs" />
+    <Compile Include="Repo\EFS\C__MigrationHistory.cs" />
+    <Compile Include="Repo\EFS\Finloans.cs" />
+    <Compile Include="Repo\EFS\LoanInfo.cs" />
+    <Compile Include="Repo\EFS\Subscription.cs" />
+    <Compile Include="Repo\EFS\VisitInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002241545510_sub.resx">
       <DependentUpon>202002241545510_sub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002241905290_updateSub.resx">
+      <DependentUpon>202002241905290_updateSub.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
