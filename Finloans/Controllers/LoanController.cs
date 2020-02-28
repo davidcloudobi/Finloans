@@ -115,7 +115,7 @@ namespace Finloans.Controllers
         {
 
          var  numb = _db.Amount(id);
-            ViewBag.Message = "Your contact page.";
+            //ViewBag.Message = "Your contact page.";
 
             var email = (string)Session["Email"];
             var paystackTransactionAPI = new PaystackTransaction("sk_test_4f260b0736ab1d07afe4642756c7868359abb180");

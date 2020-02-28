@@ -599,18 +599,12 @@
     <Content Include="Views\Loan\Details.cshtml" />
     <Content Include="Views\Loan\FilteredResult.cshtml" />
     <Content Include="Views\Loan\GetAllCompaines.cshtml" />
-    <Content Include="Views\Home\Apply.cshtml" />
-    <Content Include="Views\Home\Blog.cshtml" />
-    <Content Include="Views\Home\Elements.cshtml" />
-    <Content Include="Views\Home\Faq.cshtml" />
-    <Content Include="Views\Home\Loan.cshtml" />
     <Content Include="Views\Home\SingleBlog.cshtml" />
     <Content Include="Views\Loan\Subscribe.cshtml" />
     <Content Include="Views\Loan\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Sub\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

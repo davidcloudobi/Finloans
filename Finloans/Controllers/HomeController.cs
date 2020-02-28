@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using FinLibrary.Model.Services;
 using FinLibrary.Repo.EF;
+using NLog;
 using Paystack.Net.SDK.Transactions;
 
 namespace Finloans.Controllers
@@ -13,6 +14,7 @@ namespace Finloans.Controllers
     public class HomeController : Controller
     {
         private readonly ILoanService _db;
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         public HomeController(ILoanService db)
         {
@@ -35,18 +37,30 @@ namespace Finloans.Controllers
             //LoanInfo item
 
 
-            if (!ModelState.IsValid)
+            try
             {
+               
 
-                return View();
+                if (!ModelState.IsValid)
+                {
+
+                    return View();
+                }
+                item.LoanType = LoanType;
+
+                _logger.Info(item.LoanType);
+                _db.Add(item);
+
+                Session["item"] = item;
+                
             }
-            item.LoanType = LoanType;
-            _db.Add(item);
+            catch (Exception e)
+            {
+                //Logger logger = LogManager.GetLogger("fileLogger");
 
-            Session["item"] = item;
-           
-
-
+                // add custom message and pass in the exception
+                _logger.Error(e, "Whoops!");
+            }
             return RedirectToAction("FilteredResult", "Loan");
 
         }
@@ -74,37 +88,7 @@ namespace Finloans.Controllers
             return View();
         }
 
-       
-
-        [HttpGet]
-        public ActionResult Apply()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult Blog()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult Elements()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult Faq()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult Loan()
-        {
-            return View();
-        }
+        
 
 
         [HttpGet]
@@ -113,10 +97,6 @@ namespace Finloans.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Sub()
-        {
-           return RedirectToAction("Subscribe", "Loan");
-        }
+      
     }
 }
